@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          display: flex;
+        }
+        section {
+          flex: 1;
+          margin-right: 20px;
+        }
+        section div {
+          font-weight: bold;
+          font-size: 24px;
+        }
+        #even, #odd, #fizzbuzz {
+          font-size: 18px;
+        }
+        #fizzbuzz {
+          color: #00698f; /* blue color for FizzBuzz numbers */
+        }
+      </style>
+    </head>
+    <body>
+        <!-- <input type="text" id="input" placeholder="Enter a text to speech">
+        <button onclick="speak()">speak</button> -->
+    <section>
+       <div>Even Number</div>
+       <div id="even"></div>
+    </section>
+    <section>
+       <div>Odd Number</div>
+       <div id="odd"></div>
+    </section>
+    <section> 
+       <div>Fizzbuzz Number</div>
+       <div id="fizzbuzz"></div>
+    </section> 
+    <script>
+        //  function speak() {
+        //     const input = document.getElementById('input');
+        //     const text = input.value;
+        //     const utter = new SpeechSynthesisUtterance(text);
+        //     window.speechSynthesis.speak(utter);
+        // }
+        // for (let b = 0; b <= 100; b+=2){
+        //     console.log(b);
+        //     even.innerHTML += "<h3>" + b + "</h3>"
+        // } for (let c = 1; c <= 99; c+=2){
+        //     console.log(c);
+        //     odd.innerHTML += "<h3>" + c + "</h3>"
+        // }
+        
+        for (let b = 0; b <= 100; b += 2) {
+    console.log(b);
+    document.getElementById("even").innerHTML += "<h3>" + b + "</h3>";
+}
+
+for (let c = 1; c <= 99; c += 2) {
+    console.log(c);
+    document.getElementById("odd").innerHTML += "<h3>" + c + "</h3>";
+}
+
+function fizzBuzz(n) {
+    const fizzbuzzNumbers = [];
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            fizzbuzzNumbers.push("FizzBuzz");
+        } else if (i % 3 === 0) {
+            fizzbuzzNumbers.push("Fizz");
+        } else if (i % 5 === 0) {
+            fizzbuzzNumbers.push("Buzz");
+        } else {
+            fizzbuzzNumbers.push(i);
+        }
+    }
+    return fizzbuzzNumbers;
+}
+
+const n = 100; // Change this to the desired number
+const fizzbuzzNumbers = fizzBuzz(n);
+document.getElementById("fizzbuzz").innerHTML += fizzbuzzNumbers.map(num => "<h3>" + num + "</h3>").join("");
+    </script>
+</body>
+</html>
